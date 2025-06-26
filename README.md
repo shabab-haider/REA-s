@@ -10,7 +10,7 @@ REA's Planning is a full-stack web application designed to simplify the process 
 - **Backend**: Node.js, Express.js
 - **Database**: MongoDB (Local)
 - **Authentication**: JWT
-- **Environment Management**: `.env` (both client and server)
+- **Environment Management**: `.env` (both FrontEnd and BackEnd)
 
 ---
 
@@ -18,10 +18,10 @@ REA's Planning is a full-stack web application designed to simplify the process 
 
 ```
 REA-Planning/
-├── client/                # Frontend (Vite + React)
+├── FrontEnd/                # Frontend (Vite + React)
 │   ├── .env              # Frontend environment variables
 │   └── src/
-├── server/                # Backend (Express)
+├── BackEnd/                # Backend (Express)
 │   ├── .env              # Backend environment variables
 │   ├── routes/           # Express route files
 │   ├── controllers/      # Business logic
@@ -33,6 +33,7 @@ REA-Planning/
 ## ⚙️ Setup Instructions
 
 1. **Clone the Repository**
+
 ```bash
 git clone https://github.com/shabab-haider/REA-Planning.git
 ```
@@ -40,11 +41,13 @@ git clone https://github.com/shabab-haider/REA-Planning.git
 2. **Set up Environment Variables**
 
 - **Frontend (.env)**
+
 ```
 VITE_BASE_URL=http://localhost:4000
 ```
 
 - **Backend (.env)**
+
 ```
 PORT=4000
 MONGO_URI=mongodb://0.0.0.0
@@ -53,22 +56,24 @@ VITE_BASE_URL=http://localhost:5173
 ```
 
 3. **Install Dependencies**
+
 ```bash
-cd client
+cd FrontEnd
 npm install
-cd ../server
+cd ../BackEnd
 npm install
 ```
 
 4. **Run the Application**
+
 ```bash
 # Start backend
-cd server
+cd FrontEnd
 npm run dev
 
 # Start frontend
-cd client
-npm run dev
+cd BackEnd
+npm npx nodemon
 ```
 
 ---
@@ -76,6 +81,7 @@ npm run dev
 ## 📌 API Endpoints
 
 ### 🟦 Vendor Routes
+
 - `POST   /vendors/register` - Register a new vendor
 - `POST   /vendors/login` - Vendor login
 - `GET    /vendors/dashboard` - Fetch vendor dashboard (auth)
@@ -99,6 +105,7 @@ npm run dev
 - `POST   /vendors/packages/add` - Add a vendor package
 
 ### 🟩 Booking Routes
+
 - `POST   /bookings/create/:vendorId` - Create a new booking for the vendor
 - `POST   /bookings/statusUpdate` - Update booking status
 
